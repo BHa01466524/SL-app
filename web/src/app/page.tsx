@@ -1,6 +1,7 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
+import { Navbar } from '@/components/Navbar';
 import styles from "./page.module.css";
 
 export default function Home() {
@@ -12,15 +13,14 @@ export default function Home() {
 
   return (
     <div className={styles.app}>
-      <aside className={styles.sidebar}></aside>
+      <Navbar />
       <main className={styles.main}>
-        <header className={styles.mainheader}>
-          <div>
-            <h1>Welcome back Camila Hansen</h1>
-            <button onClick={handleCreateTimetable} className={styles.goldButton}>Create a new timetable</button>
-          </div>
-        </header>
-        {/* Card grid will go here */}
+        <section className={styles.titleSection}>
+          <h1>Welcome back Camila Hansen</h1>
+        </section>
+        <section className={styles.buttonSection}>
+          <button onClick={handleCreateTimetable} className="goldButton">Create a new timetable</button>
+        </section>
         <section className={styles.grid}>
           {/* Top row: 3 cards */}
           <div className={styles.card}>
